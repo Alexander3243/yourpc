@@ -25,7 +25,7 @@ class ControllerCommonSecurity extends Controller {
 			
 		$data['document_root'] = str_replace('\\', '/', realpath($this->request->server['DOCUMENT_ROOT'] . '/../') . '/');
 
-		return $this->load->view('common/security', $data);
+//		return $this->load->view('common/security', $data);
 	}
 	
 	public function move() {
