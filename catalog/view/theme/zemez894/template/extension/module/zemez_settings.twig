@@ -1,0 +1,4 @@
+<span class="header-settings pull-right">
+	<span>{% if open %}{{ open }}{% endif %} </span>	
+	<span class="tx-phone">{% if telephone %}<i class="material-icons-local_phone"></i><a href="callto:{{telephone|replace({' ': '', ")" : '', '(' : '', "+" : ''})}}">{{ telephone }}</a>{% endif %}</span>
+</span>

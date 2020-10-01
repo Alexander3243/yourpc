@@ -1,0 +1,76 @@
+<div class="box-cart pull-right">
+	<div id="cart" class="cart toggle-wrap">
+		<button type="button" data-loading-text="{{ text_loading }}" class="toggle">
+			<i class="material-icons-local_grocery_store"></i> 
+			<strong>{{ text_shopping_cart }}</strong><br>
+			<span id="cart-total" class="cart-total">{{ text_items }}</span>
+			{% if (text_items2 is defined) %}
+			<span id="cart-total2" class="cart-total2">{{ text_items2 }}</span>
+			{% endif %}
+			{% if (text_items3 is defined) %} 
+			<span id="cart-total3" class="cart-total3">{{ text_items3 }}</span>
+			{% endif %} 
+		</button>
+		<ul class="toggle_cont__right toggle_cont">
+			{% if (products or vouchers) %} 
+			<li>
+				<table class="table">
+					{% for product in products %} 
+					<tr>
+						<td class="">{% if (product['thumb']) %} 
+							<div class="image">
+								<a href="{{ product['href'] }}">
+									<img src="{{ product['thumb'] }}" alt="{{ product['name'] }}" title="{{ product['name'] }}" class="img-thumbnail" />
+								</a>
+							</div>
+							{% endif %} 
+						</td>
+						<td class="text-left">
+							<div class="name">
+								<a href="{{ product['href'] }}">{{ product['name'] }}</a>
+							</div>
+						</td>
+						<td class="text-right"><div><span class="price-cart"><i> x </i> {{ product['quantity'] }} <b>{{ product['total'] }}</b></span></div></td>
+						<td class="text-center">
+							<button type="button" onclick="cart.remove('{{ product['cart_id'] }}');" title="{{ button_remove }}" class="btn btn-danger btn-xs">
+								<i class="material-icons-close"></i>
+							</button>
+						</td>
+					</tr>
+					{% endfor %} 
+					{% for voucher in vouchers %} 
+					<tr>
+						<td class="text-center"></td>
+						<td class="text-left"><div class="name">{{ voucher['description'] }}</div></td>
+						<td class="text-right"><div><span class="price-cart"><i> x </i> 1 <b>{{ voucher['amount'] }}</b></span></div></td>
+						<td class="text-center text-danger">
+							<button type="button" onclick="voucher.remove('{{ voucher['key'] }}');" title="{{ button_remove }}" class="btn btn-danger btn-xs">
+								<i class="material-icons-close"></i>
+							</button>
+						</td>
+					</tr>
+					{% endfor %} 
+				</table>
+			</li>
+			<li>
+				<table class="table total">
+					{% for total in totals %} 
+					<tr>
+						<td class="text-left">{{ total['title'] ~' : ' }} <strong>{{ total['text'] }}</strong></td>
+						<td class="text-right"></td>
+					</tr>
+					{% endfor %} 
+				</table>
+				<div class="text-left">
+					<a class="btn" href="{{ cart }}"><span> {{ text_cart }}</span></a>
+					<a class="btn-primary" href="{{ checkout }}"><span >{{ text_checkout }}</span></a>
+				</div>
+			</li>
+			{% else %} 
+			<li>
+				<p class="text-empty">{{ text_empty }}</p>
+			</li>
+			{% endif %} 
+		</ul>
+	</div>
+</div>
