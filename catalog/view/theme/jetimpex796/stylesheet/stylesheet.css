@@ -1342,12 +1342,14 @@ section.bottom {
   .cart > button i, .cart > button strong, .cart > button span {
     vertical-align: middle;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 15px;
     color: #fff;
     -moz-transition: 0.4s all ease;
     -o-transition: 0.4s all ease;
     -webkit-transition: 0.4s all ease;
     transition: 0.4s all ease; }
+    
+    
   .cart > button i {
     float: left;
     position: relative;
@@ -5213,7 +5215,7 @@ input[type="checkbox"][name="agree"] + label {
       line-height: 27px;
       padding: 9px 18px 8px;
       color: #2f2f2f;
-      background: #f2f2f2;
+      background: white;
       -moz-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
@@ -5332,7 +5334,7 @@ input[type="checkbox"][name="agree"] + label {
   display: block; }
   .sf-menu ul > li > .sf-with-ul span:before,
   .sf-menu > li > .sf-with-ul span:before {
-    content: "\ec3c";
+   
     font: 400 11px/45px "Linearicons";
     right: -4px;
     position: absolute;
@@ -5490,9 +5492,9 @@ input[type="checkbox"][name="agree"] + label {
       -webkit-transition: 0.5s all ease;
       transition: 0.5s all ease;
       z-index: 1;
-      background: rgba(0, 0, 0, 0.1); }
+       }
       .rd-mobilemenu_ul a .rd-submenu-toggle:after {
-        content: '\f078'; }
+        }
       .rd-mobilemenu_ul a .rd-submenu-toggle:hover {
         background: #ebeaea;
         color: #666; }

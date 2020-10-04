@@ -4146,6 +4146,9 @@ header .sf-menu > li {
 .sf-menu > li.sfHover > a, .sf-menu > li > a:hover, .sf-menu > li > a.active {
   color: #777;
 }
+.sf-menu > li > a {
+    background: white !important;
+}
 .sf-menu li {
   position: relative;
 }
