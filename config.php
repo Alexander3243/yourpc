@@ -1,14 +1,14 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://ypc.loc/');
+define('HTTP_SERVER', 'http://yourpc.com.ua/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://ypc.loc/');
+define('HTTPS_SERVER', 'http://yourpc.com.ua/');
 
 // DIR
-define('DIR_APPLICATION', '/home/alastar/projects/yourpc/catalog/');
-define('DIR_SYSTEM', '/home/alastar/projects/yourpc/system/');
-define('DIR_IMAGE', '/home/alastar/projects/yourpc/image/');
+define('DIR_APPLICATION', '/home/yourpcc1/public_html/catalog/');
+define('DIR_SYSTEM', '/home/yourpcc1/public_html/system/');
+define('DIR_IMAGE', '/home/yourpcc1/public_html/image/');
 define('DIR_STORAGE', DIR_SYSTEM . 'storage/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/theme/');
@@ -23,8 +23,8 @@ define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 // DB
 define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'root');
-define('DB_DATABASE', 'yourpc');
+define('DB_USERNAME', 'yourpcc1_admin');
+define('DB_PASSWORD', 'lytghjgtnhjdcr');
+define('DB_DATABASE', 'yourpcc1_db1');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
