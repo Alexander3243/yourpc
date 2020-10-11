@@ -8,11 +8,11 @@ define('HTTPS_SERVER', 'http://yourpc.com.ua/admin/');
 define('HTTPS_CATALOG', 'http://yourpc.com.ua/');
 
 // DIR
-define('DIR_APPLICATION', '/home/alastar/projects/yourpc/admin/');
-define('DIR_SYSTEM', '/home/alastar/projects/yourpc/system/');
-define('DIR_IMAGE', '/home/alastar/projects/yourpc/image/');
+define('DIR_APPLICATION', '/home/yourpcc1/public_html/admin/');
+define('DIR_SYSTEM', '/home/yourpcc1/public_html/system/');
+define('DIR_IMAGE', '/home/yourpcc1/public_html/image/');
 define('DIR_STORAGE', DIR_SYSTEM . 'storage/');
-define('DIR_CATALOG', '/home/alastar/projects/yourpc/catalog/');
+define('DIR_CATALOG', '/home/yourpcc1/public_html/catalog/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
 define('DIR_CONFIG', DIR_SYSTEM . 'config/');
@@ -34,3 +34,4 @@ define('DB_PREFIX', 'oc_');
 
 // OpenCart API
 define('OPENCART_SERVER', 'https://www.opencart.com/');
+
