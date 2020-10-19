@@ -2606,6 +2606,7 @@ select {
   text-align: left; }
 
 .sbHolder {
+  display: none;
   border: 1px solid #ededed;
   height: 35px;
   position: relative;
@@ -9771,3 +9772,15 @@ footer {
 @media (max-width: 480px) {
   .col-xs-6 {
     width: 100%; } }
+    
+    /***********************************Правки*****************************/
+    
+    #payment-address > div.quickcheckout-content > i {
+        display: none;
+    }
+    
+    #cart1 > div > table > tbody > tr > td.quantity > div > span:nth-child(3) > button.btn.btn-danger.button-remove {
+        background-color: #428bca;
+        border: 0px;
+    }
+    

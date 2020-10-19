@@ -15,3 +15,7 @@ $_['text_order']        = 'История заказов';
 $_['text_wishlist']     = 'Закладки';
 $_['text_newsletter']   = 'Рассылка';
 $_['text_powered']      = '&copy; yourpc 2020';
+
+				$_['text_simple_blog']   = 'Блог';
+				
+

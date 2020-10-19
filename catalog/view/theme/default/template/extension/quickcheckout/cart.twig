@@ -42,7 +42,7 @@
 				<input type="text" data-mask="9?999999999999999" value="{{ product.quantity }}" class="qc-product-qantity form-control text-center" name="quantity[{{ product.key }}]">
 				<span class="input-group-btn">
 					<button class="btn btn-primary button-update" data-type="increase" data-product="{{ product.key }}">+</button>
-					<button class="btn btn-danger button-remove" data-product="{{ product.key }}" data-remove="{{ product.key }}" title="{{ button_remove }}"><i class="glyph-icon icon-cancel">&#xe80f;</i></button>
+					<button class="btn btn-danger button-remove" data-product="{{ product.key }}" data-remove="{{ product.key }}" title="{{ button_remove }}"><i class="glyphicon glyphicon-trash"></i></button>
 				</span>
 			</div>
 			{% else %}

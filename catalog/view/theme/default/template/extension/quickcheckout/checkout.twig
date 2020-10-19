@@ -55,24 +55,17 @@
 					 </div>
 				{% endif %} 
 				
-				<div class="qc-step" data-col="{{ step['payment_address']['column'] }}" data-row="{{ step['payment_address']['row'] }}">
+				<div style=""class="qc-step" data-col="{{ step['payment_address']['column'] }}" data-row="{{ step['payment_address']['row'] }}">
 					<div id="payment-address">
 					  <div class="quickcheckout-heading"><i class=""></i> {{ not logged ? text_checkout_account : text_checkout_payment_address }}</div>
 					  <div class="quickcheckout-content">{{ guest ? guest : payment_address }}</div>
 					</div>
 				</div>
 
-				{% if shipping_required %} 
-				<div class="qc-step {% if not show_shipping_address %}{{ 'hidden' }}{% endif %}" data-col="{{ step['shipping_address']['column'] }}" data-row="{{ step['shipping_address']['row'] }}">
-					<div id="shipping-address">
-					  <div class="quickcheckout-heading"><i class=""></i> {{ text_checkout_shipping_address }}</div>
-					  <div class="quickcheckout-content">{{ shipping_address ? shipping_address }}</div>
-					</div>
-				</div>
-				{% endif %} 
+			
 
 				{% if shipping_required %} 
-				<div class="qc-step {% if not shipping_module %}{{ 'hidden' }}{% endif %}" data-col="{{ step['shipping_method']['column'] }}" data-row="{{ step['shipping_method']['row'] }}">
+				<div class="qc-step {% if not shipping_module %}{% endif %}" data-col="{{ step['shipping_method']['column'] }}" data-row="{{ step['shipping_method']['row'] }}">
 					<div id="shipping-method">
 					  <div class="quickcheckout-heading"><i class="fa fa-truck"></i> {{ text_checkout_shipping_method }}</div>
 					  <div class="quickcheckout-content"></div>
@@ -80,9 +73,9 @@
 				</div>
 				{% endif %}
 
-				<div class="qc-step {% if not payment_module %}{{ 'hidden' }}{% endif %}" data-col="{{ step['payment_method']['column'] }}" data-row="{{ step['payment_method']['row'] }}">
+				<div class="qc-step {% if not payment_module %}{% endif %}" data-col="{{ step['payment_method']['column'] }}" data-row="{{ step['payment_method']['row'] }}">
 					<div id="payment-method">
-					  <div class="quickcheckout-heading"><i class="fa fa-credit-card"></i> {{ text_checkout_payment_method }}</div>
+					  <div class="quickcheckout-heading"><i class=""></i> {{ text_checkout_payment_method }}</div>
 					  <div class="quickcheckout-content"></div>
 					</div>
 				</div>
@@ -151,7 +144,7 @@
 				  <div class="quickcheckout-content">{{ guest ? guest : payment_address }}</div>
 				</div>
 				{% if shipping_required %} 
-				<div id="shipping-address" {% if not show_shipping_address %}{{ 'class="hidden"' }}{% endif %}>
+				<div id="shipping-address" {% if not show_shipping_address %}{% endif %}>
 				  <div class="quickcheckout-heading"><i class=""></i> {{ text_checkout_shipping_address }}</div>
 				  <div class="quickcheckout-content">{{ shipping_address ? shipping_address }}</div>
 				</div>

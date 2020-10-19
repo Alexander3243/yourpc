@@ -1,6 +1,11 @@
 <?php
 class ControllerCheckoutCart extends Controller {
 	public function index() {
+		
+			if ($this->cart->hasProducts() && $this->config->get('quickcheckout_skip_cart')){
+				$this->response->redirect($this->url->link('extension/quickcheckout/checkout'));
+			}
+            
 		$this->load->language('checkout/cart');
 
 		$this->document->setTitle($this->language->get('heading_title'));

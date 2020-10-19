@@ -168,6 +168,9 @@ class ControllerMarketplaceInstall extends Controller {
 						}
 					}
 					
+		
+		    $safe = true;
+		    
 					if ($safe) {
 						// Check if the copy location exists or not
 						if (substr($destination, 0, 5) == 'admin') {
@@ -216,6 +219,14 @@ class ControllerMarketplaceInstall extends Controller {
 							$path = DIR_SYSTEM . substr($destination, 7);
 						}
 	
+		
+			  if ($path == '') {
+  				$app_root = explode('/',DIR_APPLICATION);
+  				unset($app_root[count($app_root)-2]);
+  				$app_root = implode('/',$app_root);
+  				$path = $app_root . $destination;
+			  }
+		    
 						if (is_dir($file) && !is_dir($path)) {
 							if (mkdir($path, 0777)) {
 								$this->model_setting_extension->addExtensionPath($extension_install_id, $destination);
