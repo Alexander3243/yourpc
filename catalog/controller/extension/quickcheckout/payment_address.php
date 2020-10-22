@@ -91,7 +91,7 @@ class ControllerExtensionQuickCheckoutPaymentAddress extends Controller {
 	public function validate() {
 		$this->load->language('checkout/checkout');
 		$this->load->language('extension/quickcheckout/checkout');
-
+        $nvpa = isset($this->request->post['nvpa']) ? true : false;
 		$json = array();
 
 		// Validate if customer is logged in.
@@ -121,7 +121,7 @@ class ControllerExtensionQuickCheckoutPaymentAddress extends Controller {
 			if ($this->request->post['payment_address'] == 'new') {
 				$firstname = $this->config->get('quickcheckout_field_firstname');
 
-				if (!empty($firstname['required'])) {
+				if (!empty($firstname['required']) && !$nvpa) {
 					if ((utf8_strlen($this->request->post['firstname']) < 1) || (utf8_strlen($this->request->post['firstname']) > 32)) {
 						$json['error']['firstname'] = $this->language->get('error_firstname');
 					}
@@ -137,7 +137,7 @@ class ControllerExtensionQuickCheckoutPaymentAddress extends Controller {
 
 				$telephone = $this->config->get('quickcheckout_field_telephone');
 
-				if (!empty($telephone['required'])) {
+				if (!empty($telephone['required']) && !$nvpa) {
 					if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
 						$json['error']['telephone'] = $this->language->get('error_telephone');
 					}

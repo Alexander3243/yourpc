@@ -49,7 +49,12 @@
 		  {% else %}   
 			<option value="{{ quote.code }}">
 		  {% endif %} 
-		  {{ quote.title }}&nbsp;&nbsp;({{ quote.text }})</option>
+		  {{ quote.title }}
+		  {#
+		  &nbsp;&nbsp;
+		  ({{ quote.text }})
+		  #}
+		  </option>
 		{% endfor %}
 	  {% endif %}
     {% endfor %}

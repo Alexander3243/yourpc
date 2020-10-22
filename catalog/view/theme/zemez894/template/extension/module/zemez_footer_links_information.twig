@@ -1,9 +1,0 @@
-<h4 class="box-heading">{{ text_information }}</h4>
-<ul class="box-content list-unstyled">
-	{% if (informations) %} 
-		{% for information in informations %} 
-			<li><a href="{{ information['href'] }}">{{information['title']}}</a></li>
-		{% endfor %}
-	{% endif %}	
-</ul>		
-

@@ -38,15 +38,15 @@ class ModelExtensionShippingCitylink extends Model {
 			if ((float)$cost) {
 				$quote_data['citylink'] = array(
 					'code'         => 'citylink.citylink',
-					'title'        => $this->language->get('text_title') . '  (' . $this->language->get('text_weight') . ' ' . $this->weight->format($weight, $this->config->get('config_weight_class_id')) . ')',
+					'title'        => $this->language->get('text_title') /*. '  (' . $this->language->get('text_weight') . ' ' . $this->weight->format($weight, $this->config->get('config_weight_class_id')) . ')'*/,
 					'cost'         => $cost,
-					'tax_class_id' => $this->config->get('shipping_citylink_tax_class_id'),
-					'text'         => $this->currency->format($this->tax->calculate($cost, $this->config->get('shipping_citylink_tax_class_id'), $this->config->get('config_tax')), $this->session->data['currency'])
+					/*'tax_class_id' => $this->config->get('shipping_citylink_tax_class_id'),
+					'text'         => $this->currency->format($this->tax->calculate($cost, $this->config->get('shipping_citylink_tax_class_id'), $this->config->get('config_tax')), $this->session->data['currency'])*/
 				);
 
 				$method_data = array(
 					'code'       => 'citylink',
-					'title'      => $this->language->get('text_title'),
+					'title'      => $this->language->get(''),
 					'quote'      => $quote_data,
 					'sort_order' => $this->config->get('shipping_citylink_sort_order'),
 					'error'      => false

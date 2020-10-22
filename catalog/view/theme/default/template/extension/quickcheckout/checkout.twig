@@ -56,7 +56,8 @@
 				{% endif %} 
 				
 				<div style=""class="qc-step" data-col="{{ step['payment_address']['column'] }}" data-row="{{ step['payment_address']['row'] }}">
-					<div id="payment-address">
+					<div id="payment-address" {% if not guest %}style="display: none" {% endif %}>
+					    <input type="hidden" name="nvpa" value="1">
 					  <div class="quickcheckout-heading"><i class=""></i> {{ not logged ? text_checkout_account : text_checkout_payment_address }}</div>
 					  <div class="quickcheckout-content">{{ guest ? guest : payment_address }}</div>
 					</div>
@@ -64,14 +65,14 @@
 
 			
 
-				{% if shipping_required %} 
+			{#	{% if shipping_required %} #}
 				<div class="qc-step {% if not shipping_module %}{% endif %}" data-col="{{ step['shipping_method']['column'] }}" data-row="{{ step['shipping_method']['row'] }}">
 					<div id="shipping-method">
 					  <div class="quickcheckout-heading"><i class="fa fa-truck"></i> {{ text_checkout_shipping_method }}</div>
 					  <div class="quickcheckout-content"></div>
 					</div>
 				</div>
-				{% endif %}
+			{#	{% endif %} #}
 
 				<div class="qc-step {% if not payment_module %}{% endif %}" data-col="{{ step['payment_method']['column'] }}" data-row="{{ step['payment_method']['row'] }}">
 					<div id="payment-method">
@@ -780,6 +781,7 @@ function validatePaymentMethod() {
 // Shipping Method
 {% if shipping_required %} 
 	function reloadShippingMethod(type) {
+	    var type = type || null;
 		if (type == 'payment') {
 			var post_data = $('#payment-address input[type=\'text\'], #payment-address input[type=\'checkbox\']:checked, #payment-address input[type=\'radio\']:checked, #payment-address input[type=\'hidden\'], #payment-address select, #payment-address textarea, #shipping-method input[type=\'text\'], #shipping-method input[type=\'checkbox\']:checked, #shipping-method input[type=\'radio\']:checked, #shipping-method input[type=\'hidden\'], #shipping-method select, #shipping-method textarea');
 		} else {
@@ -1015,6 +1017,7 @@ function loadCart() {
 {% endif %} 
 
 {% if voucher_module or coupon_module or reward_module %} 
+
 // Validate Coupon
 $(document).on('click', '#button-coupon', function() {
 	$.ajax({
